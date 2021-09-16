@@ -1,0 +1,20 @@
+services:
+  # A Docker web service
+  - type: pserv
+    name: influxdb
+    env: docker
+    envVars:
+      - key: DOCKER_INFLUXDB_INIT_USERNAME
+        sync: false
+      - key: DOCKER_INFLUXDB_INIT_PASSWORD
+        sync: false
+      - key: DOCKER_INFLUXDB_INIT_ORG
+        sync: false
+      - key: DOCKER_INFLUXDB_INIT_BUCKET
+        sync: false
+      - key: DOCKER_INFLUXDB_INIT_MODE
+        value: setup
+    disk:
+      name: influxdb-data
+      mountPath: /var/lib/influxdb2
+      sizeGB: 10
