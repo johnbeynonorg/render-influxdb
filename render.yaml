@@ -1,6 +1,6 @@
 services:
   # A Docker web service
-  - type: pserv
+  - type: web
     name: influxdb
     env: docker
     envVars:
